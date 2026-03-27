@@ -381,6 +381,49 @@ footer a {
   .sticky-cta { display: none; }
   body { padding-bottom: 0; }
 }
+
+/* SCHEDULE DROPDOWN */
+.schedule details {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.schedule details:last-child { border: none; }
+.schedule summary {
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  opacity: 0.9;
+}
+.schedule summary::-webkit-details-marker { display: none; }
+.schedule summary::after {
+  content: '+';
+  font-size: 18px;
+  opacity: 0.5;
+  font-weight: 300;
+}
+.schedule details[open] summary::after { content: '−'; }
+.sched-times { padding: 0 0 12px; }
+.sched-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 14px;
+  opacity: 0.75;
+}
+.sched-tag {
+  font-size: 11px;
+  background: rgba(212,168,67,0.2);
+  color: #D4A843;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
 </style>
 </head>
 <body>
@@ -448,12 +491,53 @@ footer a {
   <h2>Schedule and Pricing</h2>
   
   <div class="detail-card">
-    <h3>Schedule</h3>
-    <ul>
-      <li>Mornings, afternoons, evenings, and weekends</li>
-      <li>Multiple time slots to fit your schedule</li>
-      <li>6-week sessions starting April 6</li>
-    </ul>
+    <h3>Weekly Schedule</h3>
+    <p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Tap a day to see times</p>
+    <div class="schedule">
+      <details>
+        <summary>Monday</summary>
+        <div class="sched-times">
+          <div class="sched-row"><span>1:00 – 2:00 PM</span><span class="sched-tag">1 hr</span></div>
+          <div class="sched-row"><span>5:30 – 6:30 PM</span><span class="sched-tag">1 hr</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Tuesday</summary>
+        <div class="sched-times">
+          <div class="sched-row"><span>8:00 – 9:00 AM</span><span class="sched-tag">1 hr</span></div>
+          <div class="sched-row"><span>9:30 – 10:30 AM</span><span class="sched-tag">1 hr · 50+</span></div>
+          <div class="sched-row"><span>10:30 AM – 12:00 PM</span><span class="sched-tag">1.5 hr</span></div>
+          <div class="sched-row"><span>7:00 – 8:30 PM</span><span class="sched-tag">1.5 hr</span></div>
+          <div class="sched-row"><span>9:00 – 10:00 PM</span><span class="sched-tag">1 hr</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Wednesday</summary>
+        <div class="sched-times">
+          <div class="sched-row"><span>1:00 – 2:00 PM</span><span class="sched-tag">1 hr · 50+</span></div>
+          <div class="sched-row"><span>7:30 – 9:00 PM</span><span class="sched-tag">1.5 hr</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Thursday</summary>
+        <div class="sched-times">
+          <div class="sched-row"><span>5:00 – 6:00 PM</span><span class="sched-tag">1 hr · 50+</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Friday</summary>
+        <div class="sched-times">
+          <div class="sched-row"><span>9:00 – 10:00 AM</span><span class="sched-tag">1 hr</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Sunday</summary>
+        <div class="sched-times">
+          <div class="sched-row"><span>9:00 – 10:30 AM</span><span class="sched-tag">1.5 hr</span></div>
+          <div class="sched-row"><span>2:00 – 3:00 PM</span><span class="sched-tag">1 hr</span></div>
+        </div>
+      </details>
+    </div>
   </div>
   
   <div class="detail-card">
